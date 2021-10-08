@@ -1,5 +1,8 @@
 class GameObject {
 
+  PVector dir;
+  int shotTimer;
+  int threshold;
   int lives;
   PVector location;
   PVector velocity;
@@ -12,6 +15,7 @@ class GameObject {
   }
 
   void act () {
+    location.add(velocity);
     location.add(velocity);
 
     if (location.y < -50) location.y = height+50;

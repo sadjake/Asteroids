@@ -28,13 +28,19 @@ class Ship extends GameObject {
   void act () {
     super.act();
     shotTimer++;
-    if (upkey) velocity.add(direction);
+    if (upkey) {
+      println("?");
+      velocity.add(direction);
+      myObjects.add(new Fire());
+      println("!");
+    }
     if (downkey) velocity.sub(direction);
     if (leftkey) direction.rotate(-radians(5));
     if (rightkey) direction.rotate(radians(5));
     if (spacekey && shotTimer > threshold) {
       myObjects.add(new Bullet());
       shotTimer = 0;
+    if (velocity.mag() > 9) velocity.setMag(5);
     }
   }
 }
