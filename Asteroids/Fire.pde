@@ -5,12 +5,12 @@ class Fire extends GameObject {
   Fire() {
     lives = 1;
     size = 10;
-    t = 255;
+    t = int(random(200,255));
     // loc = new PVector (myShip.location);
     location = myShip.location.copy();
     velocity = myShip.direction.copy();
-    velocity.rotate(PI); //180 degrees
-    velocity.setMag(5);
+    velocity.rotate(PI+random(-0.5)); //180 degrees
+    velocity.setMag(3);
   }
 
   void show () {
@@ -21,7 +21,7 @@ class Fire extends GameObject {
 
   void act () {
     super.act();
-    t = t -5;
+    t = t - 5;
     if (t <= 0) lives = 0;
   }
 }

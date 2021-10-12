@@ -4,6 +4,7 @@ ArrayList<GameObject> myObjects;
 
 void setup() {
   size (800, 600);
+  rectMode(CENTER);
   imageMode(CENTER);
   myShip = new Ship();
   myObjects = new ArrayList<GameObject>();
